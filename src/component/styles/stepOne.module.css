@@ -1,0 +1,81 @@
+.form {
+    width: 100%;
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.formBody {
+    height: 380px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input,
+select {
+    height: 40px;
+    border: solid 1px gray;
+    border-radius: 3px;
+    width: 100%;
+    margin: 5px 0;
+    color: gray;
+    padding: 10px;
+}
+
+.inputLabel {
+    margin: 5px 0px;
+    color: gray;
+    font-size: 12px;
+}
+
+
+.col {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 20px;
+}
+
+
+
+.inputGroupTel,
+.inputGroupEmail,
+.inputGroupCity,
+.inputGroupAddress {
+    grid-column: 1/3;
+}
+
+@media (min-width: 1400px) {
+    .col {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .formBody {
+        height: 250px;
+    }
+
+    .inputGroupTitle,
+    .inputGroupCity {
+        grid-column: 1/3;
+    }
+
+    .inputGroupEmail {
+        grid-column: 3/7;
+    }
+
+    .inputGroupName,
+    .inputGroupAddress {
+        grid-column: 3/7;
+    }
+
+    .inputGroupTel {
+        grid-column: 1/3;
+    }
+}
