@@ -1,0 +1,15 @@
+@use '../../../mixin';
+
+.register__container {
+    grid-column: 1/2;
+
+    .register__title {
+        @include mixin.font-setting(2rem, 700, var(--font-color));
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .register__container {
+        grid-column: 1/4;
+    }
+}

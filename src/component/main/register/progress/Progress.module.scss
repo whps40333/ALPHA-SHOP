@@ -1,0 +1,33 @@
+.progress__container {
+    margin: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .progress__bar {
+        display: flex;
+        flex-grow: 1;
+        max-width: 60px;
+        margin: 0px 8px;
+        border: 1px solid #afb1bd;
+
+        &__active {
+            display: flex;
+            flex-grow: 1;
+            max-width: 60px;
+            margin: 0px 8px;
+            border: 1px solid var(--font-color);
+        }
+    }
+
+    .vector {
+        display: block;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .progress__container {
+        margin: 1.5rem 0;
+    }
+}

@@ -1,0 +1,31 @@
+@use '../../../mixin';
+
+.cart__container {
+    grid-column: 3/4;
+    margin-top: 5rem;
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--cart-border-color);
+    background-color: var(--cart-bgColor);
+    border-radius: 8px;
+
+    .cart__title {
+        @include mixin.font-setting(18px, 700, var(--font-color));
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .cart__container {
+        padding: 0 1rem;
+
+        .cart__title {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .cart__container {
+        grid-column: 1/4;
+        margin: 2rem 0 144px 0;
+    }
+}

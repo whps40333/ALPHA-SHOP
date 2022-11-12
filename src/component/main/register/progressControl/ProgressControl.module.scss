@@ -1,0 +1,49 @@
+@use '../../../../mixin';
+
+.progress__control__container {
+    margin-top: 3rem;
+    border-top: 1px solid var(--divider-color);
+
+    .progress__control__button__group {
+        padding-top: 1.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+:global(.btn__back) {
+    @include mixin.font-setting(14px, 400, var(--font-color));
+    background-color: var(--main-background-color);
+    cursor: pointer;
+}
+
+:global(.btn__back[disabled]) {
+    visibility: hidden;
+}
+
+:global(.btn__prinary) {
+    width: 174px;
+    height: 46px;
+    @include mixin.font-setting(14px, 400, #ffffff);
+    background-color: #f67599;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 730px) {
+    .progress__control__container {
+        margin: 1rem 0;
+        position: absolute;
+        bottom: 0px;
+        height: 110px;
+        width: 100%;
+    }
+
+    :global(.btn__fallwidth) {
+        position: absolute;
+        top: 24px;
+        width: 100%;
+    }
+}

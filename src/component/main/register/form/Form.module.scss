@@ -1,0 +1,15 @@
+@use '../../../../_mixin.scss';
+
+.form__title {
+    @include mixin.font-setting(1.5rem, 700, var(--font-color));
+}
+
+.form__body {
+    height: 228px;
+}
+
+@media screen and (max-width: 560px) {
+    .form__body {
+        height: 100%;
+    }
+}

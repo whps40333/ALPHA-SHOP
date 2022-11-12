@@ -1,0 +1,11 @@
+@mixin font-setting($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin img-setting($content, $width) {
+    content: $content;
+    width: $width;
+    display: block;
+}

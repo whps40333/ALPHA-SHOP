@@ -1,0 +1,37 @@
+@use '../../mixin';
+
+.nav__link {
+    @include mixin.font-setting(1rem, 500, var(--font-color));
+}
+
+.nav__icon {
+    width: 24px;
+
+    :global(.icon__search) {
+        @include mixin.img-setting(var(--search-img), 100%);
+    }
+
+    :global(.icon__shop) {
+        @include mixin.img-setting(var(--shop-img), 100%);
+    }
+
+    :global(.icon__theme) {
+        @include mixin.img-setting(var(--theme-img), 100%);
+    }
+
+}
+
+.icon__logo {
+    @include mixin.img-setting(var(--logo-img), 170px);
+}
+
+.nav__icon img,
+.icon__logo img {
+    width: 100%;
+}
+
+@media screen and (max-width: 730px) {
+    .icon__logo {
+        width: 135px;
+    }
+}

@@ -1,0 +1,16 @@
+@use '../../../../mixin';
+
+
+
+.cart__info {
+    border-top: 1px solid var(--cart-border-color);
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .cart__text,
+    .cart__price {
+        @include mixin.font-setting(14px, 400, var(--font-color));
+    }
+}

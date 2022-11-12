@@ -1,0 +1,61 @@
+@use '../../../../mixin';
+
+.progress__group {
+    display: flex;
+    align-items: center;
+
+    .progress__icon {
+        margin-right: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mixin.font-setting(0.75rem, 700, #afb1bd);
+        background-color: var(--circle-bgColor);
+        border: 1px solid #afb1bd;
+        border-radius: 50%;
+
+        &__active {
+            margin-right: 0.5rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include mixin.font-setting(0.75rem, 700, #ffffff);
+            background-color: var(--active-circle-bgColor);
+            border: 1px solid var(--active-circle-bgColor);
+            border-radius: 50%;
+        }
+    }
+
+    .progress__label {
+        @include mixin.font-setting(1rem, 400, #afb1bd);
+
+        &__active {
+            color: var(--font-color);
+        }
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .progress__group {
+        .progress__icon {
+            margin-right: 0;
+        }
+
+        .progress__label {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .progress__group {
+        .progress__icon {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+}
