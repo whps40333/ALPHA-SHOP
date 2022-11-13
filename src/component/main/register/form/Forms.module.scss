@@ -15,7 +15,7 @@
 input:not([type='radio']) {
     width: 100%;
     height: 40px;
-
+    -webkit-appearance: none;
     border: 1px solid var(--form-items-color);
     border-radius: 4px;
     color: var(--form-items-color);
@@ -43,7 +43,7 @@ input:not([type='radio']) {
 }
 
 :global(input[type='radio']) {
-
+    -webkit-appearance: none;
     margin: 0 20px;
     width: 20px;
     height: 20px;

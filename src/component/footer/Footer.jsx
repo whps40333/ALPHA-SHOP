@@ -18,7 +18,7 @@ const LINKDATAS = {
 
 export default function Footer() {
     return (
-        <Footer className={styles.site__footer}>
+        <footer className={styles.site__footer}>
             <div className={`${styles.footer__container}container`}>
                 <Logo imgSrc={logo} />
                 <FooterSection title='客戶服務'>
@@ -51,7 +51,7 @@ export default function Footer() {
                     </div>
                 </FooterSection>
             </div>
-        </Footer>
+        </footer>
 
     )
 }
