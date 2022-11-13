@@ -3,7 +3,7 @@
 
 ## 專案介紹
 ---
-*此次負責的內容是ALPHA-SHOP的購物車頁面，以REACT.JS的技術完成。完成的元件包含Header、Main、footer
+*此次負責的內容是ALPHA-SHOP的購物車頁面，以REACT.JS的技術完成。完成的元件包含Header、Main、footer，並嘗試做USD和深夜模式。
 
 
 ## 使用方法
