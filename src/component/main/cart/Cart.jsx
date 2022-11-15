@@ -33,6 +33,8 @@ export default function Cart() {
                             dataPrice={product.price}
                             imgSrc={product.img}
                             productName={product.name}
+                            productPrice={product.price}
+                            productQuantity={product.quantity}
                         />
                     )
                 })}

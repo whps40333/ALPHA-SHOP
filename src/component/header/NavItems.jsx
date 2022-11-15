@@ -2,10 +2,10 @@ import React from 'react';
 
 import styles from './NavItems.module.scss';
 
-export function NavLinks({ intext, herfLink }) {
+export function NavLinks({ inText, herfLink }) {
     return (
         <li className={styles.nav__item}>
-            <div className={`${styles.nav__link} cursor-point`} herf={herfLink}></div>
+            <div className={`${styles.nav__link} cursor-point`} herf={herfLink}>{inText}</div>
         </li>
     )
 }

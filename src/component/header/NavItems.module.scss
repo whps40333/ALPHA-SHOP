@@ -1,4 +1,4 @@
-@use '../../../src/mixin';
+@use '../../mixin';
 
 .nav__link {
     @include mixin.font-setting(1rem, 500, var(--font-color));
