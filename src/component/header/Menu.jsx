@@ -1,7 +1,8 @@
-import React from "react";
-import { NavLinks, NavIcons, Logo } from './NavItems';
+import React from 'react'
+import { NavLinks, NavIcons, Logo } from './NavItems'
 
-import styles from './Menu.module.scss';
+// import css
+import styles from './Menu.module.scss'
 
 export default function Menu({ changeTheme }) {
     return (

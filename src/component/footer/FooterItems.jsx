@@ -12,7 +12,7 @@ export function Logo({ imgSrc }) {
 
 export function FooterSection({ title, children }) {
     return (
-        <section className="footer__section">
+        <section className='footer__section'>
             <h2 className={styles.section__title}>{title}</h2>
             <div className={styles.section__content}>{children}</div>
         </section>
@@ -21,8 +21,8 @@ export function FooterSection({ title, children }) {
 
 export function PageLink({ intext }) {
     return (
-        <div className={`${styles.pagr__link} cursor-point`} herf='#'>
+        <div className={`${styles.page__link} cursor-point`} href='#'>
             {intext}
         </div>
     )
-}
+} 

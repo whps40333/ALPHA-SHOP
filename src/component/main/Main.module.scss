@@ -1,35 +1,12 @@
-.siteMain {
-    position: relatvie;
-    padding: 90px 16px 20px 16px;
-    height: 100%;
-    overflow-y: scroll;
+.main__container {
+    position: relative;
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: 6fr 1.5fr 5fr;
 }
 
-.line {
-    background-color: #E6E6EB;
-    border: none;
-    border-bottom: solid 1px #E6E6EB;
-    margin: 20px 0px;
-}
-
-@media (min-width: 1440px) {
-    .mainContainer {
-        display: grid;
-        position: relative;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        transform: translateX(-50%);
-        left: 50%;
-        gap: 0px 50px;
-    }
-
-    .stepProgressControlSet {
-        transform: translateY(-100%);
-    }
-}
-
-@media (min-width > 1440) {
-    .siteMain {
-        height: 620px;
+@media screen and (max-width: 730px) {
+    .main__container {
+        padding-top: 1rem;
     }
 }

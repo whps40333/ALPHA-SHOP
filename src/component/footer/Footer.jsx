@@ -19,7 +19,7 @@ const LINKDATAS = {
 export default function Footer() {
     return (
         <footer className={styles.site__footer}>
-            <div className={`${styles.footer__container}container`}>
+            <div className={`${styles.footer__container} container`}>
                 <Logo imgSrc={logo} />
                 <FooterSection title='客戶服務'>
                     {LINKDATAS.section_01.map((text, index) => {
@@ -52,6 +52,5 @@ export default function Footer() {
                 </FooterSection>
             </div>
         </footer>
-
     )
 }

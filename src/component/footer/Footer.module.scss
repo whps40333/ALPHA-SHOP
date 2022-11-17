@@ -1,4 +1,4 @@
-@use '../../../src/mixin';
+@use '../../mixin';
 
 .site__footer {
     margin-top: 120px;
@@ -48,11 +48,5 @@
                 }
             }
         }
-    }
-}
-
-@media screen and (max-width: 730px) {
-    .site__footer {
-        display: none;
     }
 }

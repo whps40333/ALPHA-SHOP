@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import styles from './NavItems.module.scss';
+import styles from './NavItems.module.scss'
 
 export function NavLinks({ inText, herfLink }) {
     return (
         <li className={styles.nav__item}>
-            <div className={`${styles.nav__link} cursor-point`} herf={herfLink}>{inText}</div>
+            <div className={`${styles.nav__link} cursor-point`} href={herfLink}>
+                {inText}
+            </div>
         </li>
     )
 }
@@ -13,7 +15,7 @@ export function NavLinks({ inText, herfLink }) {
 export function NavIcons({ imgType, imgAlt, changeTheme }) {
     return (
         <li className={styles.nav__item} onClick={changeTheme}>
-            <div className={`${styles.nav__icon}cursor-point`} >
+            <div className={`${styles.nav__icon} cursor-point`}>
                 <img className={imgType} alt={imgAlt}></img>
             </div>
         </li>
