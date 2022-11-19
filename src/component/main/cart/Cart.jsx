@@ -1,55 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import styles from './Cart.module.scss';
 import ProductList from './cartItems/ProductList';
 import PriceList from './cartItems/PriceList';
 
-const PRODUCTS = [
-    {
-        id: '1',
-        name: '貓咪罐罐',
-        img: 'https://picsum.photos/300/300?text=1',
-        price: 100,
-        quantity: 2,
-    },
-    {
-        id: '2',
-        name: '貓咪干干',
-        img: 'https://picsum.photos/300/300?text=2',
-        price: 200,
-        quantity: 1,
-    },
-]
+import { useProducts } from '../../../context/CartContext'
+import { useSheetDispatch } from '../../../context/ShoppingSheetContext'
 
 
 export default function Cart({ checkedData }) {
-    const [products, setProducts] = useState(PRODUCTS)
-    function handleQuantitiyAdd(productID) {
-        setProducts(
-            products.map(p => {
-                if (p.id === productID) {
-                    return {
-                        ...p,
-                        quantity: p.quantity + 1,
-                    }
-                } else {
-                    return p
-                }
-            })
-        )
-    }
-    function handleQuantitiyMinus(productId) {
-        let newProducts = products.map(p => {
-            if (p.id === productId && p.quantity > 0) {
-                return {
-                    ...p,
-                    quantity: p.quantity - 1,
-                }
-            } else {
-                return p
-            }
-        })
-        setProducts(newProducts.filter(p => p.quantity > 0))
-    }
+
+    const products = useProducts()
+
     return (
         <section className={styles.cart__container}>
             <h3 className={styles.cart__title}>購物籃</h3>
@@ -63,8 +24,6 @@ export default function Cart({ checkedData }) {
                             productName={product.name}
                             productPrice={product.price}
                             productQuantity={product.quantity}
-                            handleClickAdd={handleQuantitiyAdd}
-                            handleClickMinus={handleQuantitiyMinus}
                         />
                     )
                 })}
@@ -75,19 +34,38 @@ export default function Cart({ checkedData }) {
                 price={checkedData === 0 ? '免費' : `$${checkedData}`}
             />
             {/* <PriceList text='小計' price='0' /> */}
-            <CalculatePrice products={products} shippingPrice={checkedData} />
+            <CalculatePrice shippingPrice={checkedData} />
         </section>
     )
 }
-function CalculatePrice({ products, shippingPrice }) {
+function CalculatePrice({ shippingPrice }) {
+
+    const products = useProducts()
+    const sheetDispatch = useSheetDispatch()
+
     let totalPrice = null
-    products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
-    totalPrice += shippingPrice
+    function sumTotalPrice() {
+        products.map(p => (totalPrice = totalPrice + p.price * p.quantity))
+        totalPrice += shippingPrice
+        return totalPrice
+    }
+
+
+    useEffect(() => {
+        sheetDispatch({
+            type: 'sumTotalPrice',
+            value: totalPrice,
+        })
+    }, [products, sheetDispatch, totalPrice])
+
+
     return (
         <PriceList
             text='小計'
             price={
-                products.length > 0 ? `$${totalPrice.toLocaleString()}` : '購物籃是空的'
+                products.length > 0
+                    ? `$${sumTotalPrice().toLocaleString()}`
+                    : '購物籃是空的'
             }
         />
     )

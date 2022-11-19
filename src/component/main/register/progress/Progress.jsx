@@ -1,11 +1,13 @@
 import React from 'react';
 import ProgressGroups from './ProgressGroups';
-
+import { useStep } from '../../../../context/StepContext'
 import styles from './Progress.module.scss';
 
 import vector from '../../../../images/Vector@2x.png';
 
-export default function Progress({ step }) {
+export default function Progress() {
+    const step = useStep()
+
     return (
         <section className={styles.progress__container}>
             <ProgressGroups label='寄送地址' activeStyle={step >= 1 && true}>

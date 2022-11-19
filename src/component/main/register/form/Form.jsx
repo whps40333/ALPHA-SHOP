@@ -2,6 +2,7 @@ import React from "react";
 
 import styles from './Form.module.scss';
 
+
 export default function Form({ type, title, children }) {
     return (
         <form dataphase={type}>

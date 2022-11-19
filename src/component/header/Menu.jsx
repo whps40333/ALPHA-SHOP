@@ -4,7 +4,7 @@ import { NavLinks, NavIcons, Logo } from './NavItems'
 // import css
 import styles from './Menu.module.scss'
 
-export default function Menu({ changeTheme }) {
+export default function Menu() {
     return (
         <>
             <label className={styles.hamburger} htmlFor='menu__checkbox'>
@@ -27,11 +27,7 @@ export default function Menu({ changeTheme }) {
                 <ul className={styles.nav__icons}>
                     <NavIcons imgType='icon__search' imgAlt='Search' />
                     <NavIcons imgType='icon__shop' imgAlt='Shop' />
-                    <NavIcons
-                        imgType='icon__theme'
-                        imgAlt='Theme'
-                        changeTheme={changeTheme}
-                    />
+                    <NavIcons imgType='icon__theme' imgAlt='Theme' />
                 </ul>
             </nav>
             <div className={styles.nav__logo}>

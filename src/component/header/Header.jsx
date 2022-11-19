@@ -3,11 +3,11 @@ import Menu from './Menu'
 
 import styles from './Header.module.scss'
 
-export default function Header({ changeTheme }) {
+export default function Header() {
     return (
         <header className={styles.site__header}>
             <div className='container'>
-                <Menu changeTheme={changeTheme} />
+                <Menu />
             </div>
         </header>
     )

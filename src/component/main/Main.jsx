@@ -4,7 +4,11 @@ import Cart from './cart/Cart'
 
 import style from './Main.module.scss'
 
-const SHIPPINGDATA = [
+import { SheetProvider } from '../../context/ShoppingSheetContext'
+import { ProductsProvider } from '../../context/CartContext'
+import { StepProvider } from '../../context/StepContext'
+
+const shippingData = [
     {
         id: 1,
         name: '標準運送',
@@ -30,18 +34,24 @@ export default function Main() {
         }
     }
 
-    let checkedShipping = SHIPPINGDATA.filter(data => {
+    let checkedShipping = shippingData.filter(data => {
         return data.id === Number(currentChecked)
     })
 
     return (
         <main className={style.site__main}>
             <div className={`${style.main__container} container`}>
-                <Register
-                    handleRadioChecked={handlecurrentChecked}
-                    currentChecked={currentChecked}
-                />
-                <Cart checkedData={checkedShipping[0].price} />
+                <SheetProvider>
+                    <StepProvider>
+                        <Register
+                            handleRadioChecked={handlecurrentChecked}
+                            currentChecked={currentChecked}
+                        />
+                    </StepProvider>
+                    <ProductsProvider>
+                        <Cart checkedData={checkedShipping[0].price} />
+                    </ProductsProvider>
+                </SheetProvider>
             </div>
         </main>
     )
