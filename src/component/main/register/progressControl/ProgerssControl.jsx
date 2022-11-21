@@ -44,9 +44,9 @@ export default function ProgressControl() {
     )
 }
 
-function ProgressBtn({ type, intext, disabled, handleOnClick }) {
+function ProgressBtn({ type, intext, handleOnClick }) {
     return (
-        <button className={type} disabled={disabled} onClick={handleOnClick}>
+        <button className={type} onClick={handleOnClick}>
             {intext}
         </button>
     )

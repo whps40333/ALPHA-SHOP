@@ -50,6 +50,17 @@ function CalculatePrice({ shippingPrice }) {
         return totalPrice
     }
 
+    // const sumTotalPrice = () => {
+    //     let totalPrice = 0
+    //     products.forEach(item => {
+    //         totalPrice += item.price * item.quantity
+    //     })
+    //     totalPrice += shippingPrice
+    //     return totalPrice
+    // }
+
+    // 從cartcontext傳來的price是100，結果連帶這邊的price也沿用100
+
 
     useEffect(() => {
         sheetDispatch({

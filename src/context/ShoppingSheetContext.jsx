@@ -1,7 +1,6 @@
 import React, {
     createContext,
     useContext,
-    useRender,
     useState,
     useEffect,
     useReducer,

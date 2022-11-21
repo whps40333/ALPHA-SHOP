@@ -6,7 +6,7 @@ export default function priceList({ text, price }) {
         <section className={styles.cart__info}>
             <div className={styles.cart__text}>{text}</div>
             {/* price will render from state */}
-            <div className={styles.cart__price}>${price}</div>
+            <div className={styles.cart__price}>{price}</div>
         </section>
     )
 }
