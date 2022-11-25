@@ -35,8 +35,9 @@ export default function ProgressControl() {
                     type={`progress__control__btn btn__prinary ${step === 1 && 'btn__fallwidth'
                         }`}
                     intext={step < 3 ? '下一步 →' : '確認下單'}
-                    disabled={step === 3 ? handleClickNext : handleConfirmed}
-                    handleOnClick={handleClickNext}
+                    // disabled={step === 3 ? handleClickNext : handleConfirmed}
+                    // handleOnClick={handleClickNext}
+                    handleOnClick={step < 3 ? handleClickNext : handleConfirmed}
                 />
                 {!!confirmed && <ConfirmedModal />}
             </section>

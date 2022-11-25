@@ -28,6 +28,7 @@ export function SheetProvider({ children }) {
         if (!Object.values(tasks).includes('')) {
             setConfirmed(true)
         }
+        console.log(tasks)
     }
 
     function handleResetConfirmed() {
