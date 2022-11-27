@@ -25,7 +25,7 @@ export function SheetProvider({ children }) {
     const [confirmed, setConfirmed] = useState(false)
 
     function handleOnConfirmed() {
-        if (!Object.values(tasks).includes('')) {
+        if (!Object.values(tasks)) {
             setConfirmed(true)
         }
         console.log(tasks)
@@ -35,11 +35,7 @@ export function SheetProvider({ children }) {
         setConfirmed(false)
     }
 
-    useEffect(() => {
-        if (confirmed) {
-            console.log(tasks)
-        }
-    }, [confirmed, tasks])
+
 
     return (
         <SheetContext.Provider value={tasks}>
